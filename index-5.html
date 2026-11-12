@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#123d32">
+<meta name="description" content="موسوعة العراق الذكية - رفيقك الدراسي للصف السادس الابتدائي">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="موسوعة العراق">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-180.png">
+<title>موسوعة العراق الذكية 🇮🇶</title>
+<style>
+:root{--bg:#f4f7f5;--surface:#fff;--ink:#172b25;--muted:#718078;--green:#176b4b;--deep:#123d32;--mint:#e4f4eb;--gold:#f5c45e;--line:#e4ebe6;--shadow:0 12px 32px #183d3010}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;-webkit-tap-highlight-color:transparent}
+button,input,textarea,select{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #78b99a;outline-offset:2px}
+.app{max-width:1180px;margin:auto;min-height:100dvh;padding:0 18px 105px}
+header{background:linear-gradient(130deg,#102f28,#176b4b 70%,#2d8960);color:#fff;padding:20px max(20px,calc((100% - 1140px)/2));margin:0 -18px;border-radius:0 0 28px 28px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-weight:900;font-size:clamp(17px,2vw,21px);display:flex;align-items:center;gap:9px}.brandmark{width:40px;height:40px;border-radius:14px;background:#ffffff20;display:grid;place-items:center;font-size:23px}
+.profile{border:1px solid #ffffff35;background:#ffffff18;color:white;border-radius:999px;padding:9px 13px;font-size:13px}
+.hero{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0 8px}.hero h1{font-size:clamp(23px,4vw,34px);line-height:1.4;margin:0 0 5px}.hero p{margin:0;color:#d9eee3;font-size:14px}.hero-bubble{font-size:56px;filter:drop-shadow(0 8px 12px #061d1733)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}.stat{background:#ffffff18;border:1px solid #ffffff25;border-radius:16px;padding:12px}.stat b{display:block;font-size:20px}.stat span{font-size:12px;color:#d8e9df}
+main{padding-top:20px}.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:20px}.side{align-self:start;position:sticky;top:16px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:10px;box-shadow:var(--shadow)}.side button{width:100%;border:0;background:transparent;text-align:right;padding:13px;border-radius:13px;color:var(--muted);font-weight:750;display:flex;gap:11px;align-items:center}.side button.active,.side button:hover{background:var(--mint);color:var(--green)}.side .ico{font-size:19px;width:25px;text-align:center}
+.content{min-width:0}.screen{display:none}.screen.active{display:block}.sectionhead{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:3px 2px 13px}.sectionhead h2{font-size:19px;margin:0}.hint{color:var(--muted);font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.tile,.panel{background:var(--surface);border:1px solid var(--line);border-radius:19px;padding:16px;box-shadow:var(--shadow)}.tile{min-height:132px;text-align:right;color:var(--ink);transition:.15s}.tile:active{transform:scale(.985)}.tile .emoji{font-size:28px}.tile b{display:block;margin:8px 0 3px}.tile small{color:var(--muted);font-size:12px}
+.panel{margin-top:14px}.panel h3{margin:0 0 8px;font-size:16px}.row{display:flex;align-items:center;justify-content:space-between;gap:12px}.pill{display:inline-block;background:var(--mint);color:var(--green);padding:5px 10px;border-radius:30px;font-size:12px;font-weight:800}
+.btn{border:0;border-radius:13px;padding:12px 16px;font-weight:800;background:var(--green);color:#fff}.btn.secondary{background:var(--mint);color:var(--green)}.btn.ghost{background:#f2f6f3;color:var(--ink)}.btn.danger{background:#fff0ee;color:#a43b32}.btn.small{padding:8px 11px;font-size:12px}.btn.full{width:100%;margin-top:10px}
+.progress{height:9px;background:#eaf0eb;border-radius:20px;overflow:hidden;margin-top:10px}.progress span{display:block;height:100%;width:0;background:linear-gradient(90deg,#176b4b,#8bc9a5);border-radius:20px}
+.muted{color:var(--muted)}.tiny{font-size:12px;color:var(--muted)}.field{display:grid;gap:6px;margin:10px 0}.field label{font-size:13px;font-weight:750}.field input,.field textarea,.field select{width:100%;border:1px solid var(--line);background:#fbfdfb;border-radius:12px;padding:12px;color:var(--ink)}.field textarea{min-height:110px;resize:vertical}
+.item{display:flex;align-items:flex-start;gap:10px;padding:12px 0;border-bottom:1px solid var(--line)}.item:last-child{border:0}.item input[type=checkbox]{width:19px;height:19px;accent-color:var(--green);margin-top:3px}.item-main{flex:1;min-width:0}.item-main b{display:block}.item-main small{color:var(--muted)}.completed b{text-decoration:line-through;color:#8b9991}
+.empty{text-align:center;padding:28px 12px;color:var(--muted)}.empty strong{display:block;font-size:30px;margin-bottom:8px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0}.chip{border:1px solid var(--line);background:white;color:var(--muted);border-radius:99px;padding:7px 12px;font-size:12px}.chip.active{background:var(--mint);border-color:#c8e6d3;color:var(--green);font-weight:800}
+.citylist{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.city{background:#f8fbf8;border:1px solid var(--line);padding:12px 8px;border-radius:13px;text-align:center;font-weight:750}
+.mobile-nav{display:none;position:fixed;z-index:10;bottom:0;left:0;right:0;background:#ffffffed;backdrop-filter:blur(16px);border-top:1px solid var(--line);padding:8px 5px calc(8px + env(safe-area-inset-bottom));justify-content:space-around}.mobile-nav button{background:none;border:0;color:var(--muted);font-size:10px;display:grid;gap:3px;justify-items:center;padding:3px 8px}.mobile-nav button strong{font-size:20px}.mobile-nav button.active{color:var(--green);font-weight:900}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#183d30;color:#fff;padding:11px 16px;border-radius:99px;box-shadow:var(--shadow);z-index:20;font-size:13px;display:none}
+@media(max-width:760px){.app{padding:0 13px 105px}header{margin:0 -13px;padding:17px 18px 20px;border-radius:0 0 23px 23px}.layout{display:block}.side{display:none}.mobile-nav{display:flex}.hero{padding-top:18px}.hero-bubble{font-size:44px}.stats{gap:7px}.stat{padding:10px}.stat b{font-size:17px}.grid{gap:9px}.tile,.panel{border-radius:16px;padding:14px}.citylist{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:390px){.grid{grid-template-columns:1fr 1fr}.tile{min-height:120px}.brand{font-size:15px}.profile{font-size:11px;padding:8px}.hero h1{font-size:22px}.mobile-nav button{padding-inline:5px}}
+@media(min-width:761px){.mobile-nav{display:none}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+<header>
+ <div class="top"><div class="brand"><span class="brandmark">🇮🇶</span> موسوعة العراق الذكية</div><button class="profile" id="profileBtn" onclick="window.mosoaatAuth ? window.mosoaatAuth.signInWithGoogle() : showToast('جاري تحميل تسجيل الدخول...')">🔐 تسجيل الدخول Google</button></div>
+ <div class="hero"><div><h1 id="hello">هلا بيك! شنو ندرس اليوم؟</h1><p>افهم المعلومة، تدرّب عليها، وراجعها بوقتك.</p></div><div class="hero-bubble">📚</div></div>
+ <div class="stats"><div class="stat"><b id="xp">0 ⭐</b><span>نقاطك</span></div><div class="stat"><b id="taskCount">0</b><span>واجبات مفتوحة</span></div><div class="stat"><b id="noteCount">0</b><span>ملاحظاتك</span></div></div>
+</header>
+<main><div class="layout">
+<aside class="side">
+ <button class="active" data-go="home" onclick="go('home')"><span class="ico">⌂</span> الرئيسية</button>
+ <button data-go="study" onclick="go('study')"><span class="ico">🗺️</span> المنهج والدروس</button>
+ <button data-go="tasks" onclick="go('tasks')"><span class="ico">📝</span> واجباتي</button>
+ <button data-go="notes" onclick="go('notes')"><span class="ico">📒</span> مذكراتي</button>
+ <button data-go="exams" onclick="go('exams')"><span class="ico">🗓️</span> الامتحانات</button>
+ <button data-go="settings" onclick="go('settings')"><span class="ico">⚙️</span> الإعدادات</button>
+</aside>
+<div class="content">
+<section id="home" class="screen active">
+ <div class="sectionhead"><h2>مساحتك الدراسية</h2><span class="pill">خطوة بخطوة ✨</span></div>
+ <div class="grid">
+  <button class="tile" onclick="go('study')"><span class="emoji">🗺️</span><b>المنهج والدروس</b><small>محافظات العراق ومجتمعنا</small></button>
+  <button class="tile" onclick="go('tasks')"><span class="emoji">📝</span><b>واجباتي</b><small>سجل واجباتك وتابع إنجازها</small></button>
+  <button class="tile" onclick="go('notes')"><span class="emoji">📒</span><b>مذكراتي</b><small>احفظ ملاحظاتك المهمة</small></button>
+  <button class="tile" onclick="go('exams')"><span class="emoji">🗓️</span><b>جدول الامتحانات</b><small>رتب مواعيد اختباراتك</small></button>
+ </div>
+ <div class="panel"><div class="row"><h3>إنجاز واجباتك</h3><span class="tiny" id="taskProgressText">0%</span></div><div class="progress"><span id="taskProgress"></span></div><p class="tiny">رتّب مهامك، وكمّلها وحدة وحدة. ماكو داعي للاستعجال.</p><button class="btn full" onclick="go('tasks')">افتح قائمة الواجبات ←</button></div>
+ <div class="panel"><h3>معلومة عن التطبيق</h3><p class="tiny">هذه نسخة تجريبية قابلة للتثبيت. محتوى المنهج التفصيلي والتعاريف الوزارية يُضاف بعد تدقيقه من الكتاب والمصادر.</p></div>
+</section>
+<section id="study" class="screen">
+ <div class="sectionhead"><h2>المنهج الدراسي</h2><span class="tiny">الصف السادس الابتدائي</span></div>
+ <div class="panel"><span class="pill">الوحدة الأولى</span><h3 style="margin-top:12px">محافظات وطننا العراق جغرافياً وتأريخياً</h3><p class="tiny">18 محافظة — دروس الموقع والتضاريس والمناخ والموارد المائية والنشاط الاقتصادي والتاريخ.</p><div class="citylist" id="cities"></div></div>
+ <div class="panel"><span class="pill">الوحدة الثانية</span><h3 style="margin-top:12px">مجتمعنا العراقي</h3><p class="tiny">مفهوم المجتمع، مكوناته، الروابط التاريخية والاجتماعية، القيم الحضارية والقضايا الاجتماعية العامة.</p><p class="tiny">الدروس التفصيلية قيد الإعداد اعتماداً على كتاب الوزارة.</p></div>
+</section>
+<section id="tasks" class="screen">
+ <div class="sectionhead"><h2>واجباتي 📝</h2><span class="tiny">تنظيم يومك الدراسي</span></div>
+ <div class="panel">
+  <div class="field"><label for="taskTitle">شنو الواجب؟</label><input id="taskTitle" placeholder="مثلاً: حل أسئلة صفحة 20"></div>
+  <div class="field"><label for="taskSubject">المادة</label><select id="taskSubject"><option>الاجتماعيات</option><option>الرياضيات</option><option>العلوم</option><option>العربي</option><option>الإنكليزي</option><option>أخرى</option></select></div>
+  <div class="field"><label for="taskDate">موعد التسليم</label><input id="taskDate" type="date"></div>
+  <button class="btn full" onclick="addTask()">＋ أضف الواجب</button>
+ </div>
+ <div class="panel"><div class="row"><h3>قائمة واجباتي</h3><span class="pill" id="openTasks">0 مفتوح</span></div><div id="taskList" class="tiny empty">ما عندك واجبات بعد. أضف أول واجب من الأعلى.</div></div>
+</section>
+<section id="notes" class="screen">
+ <div class="sectionhead"><h2>مذكراتي 📒</h2><span class="tiny">ملاحظاتك تبقى محفوظة على جهازك</span></div>
+ <div class="panel"><div class="field"><label for="noteTitle">عنوان الملاحظة</label><input id="noteTitle" placeholder="مثلاً: مراجعة محافظة نينوى"></div><div class="field"><label for="noteBody">اكتب ملاحظتك</label><textarea id="noteBody" placeholder="اكتب النقاط المهمة أو واجب تريد تتذكره..."></textarea></div><button class="btn full" onclick="addNote()">احفظ الملاحظة</button></div>
+ <div class="panel"><h3>ملاحظاتي المحفوظة</h3><div id="noteList" class="tiny empty">ماكو ملاحظات محفوظة بعد.</div></div>
+</section>
+<section id="exams" class="screen">
+ <div class="sectionhead"><h2>جدول الامتحانات 🗓️</h2></div>
+ <div class="panel"><div class="field"><label for="examSubject">المادة</label><input id="examSubject" placeholder="مثلاً: اجتماعيات"></div><div class="field"><label for="examDate">تاريخ الامتحان</label><input id="examDate" type="date"></div><button class="btn full" onclick="addExam()">＋ أضف امتحان</button></div>
+ <div class="panel"><h3>مواعيدي</h3><div id="examList" class="tiny empty">ما أضفت امتحانات بعد.</div></div>
+</section>
+<section id="settings" class="screen">
+ <div class="sectionhead"><h2>الإعدادات ⚙️</h2></div>
+ <div class="panel"><h3>تثبيت التطبيق</h3><p class="tiny">بعد رفع ملفات التطبيق على استضافة HTTPS، افتحه من المتصفح واختر «إضافة إلى الشاشة الرئيسية» في iPhone أو «تثبيت التطبيق» في Chrome على أندرويد.</p><button class="btn secondary full" onclick="installApp()" id="installBtn">تثبيت التطبيق</button><p class="tiny" id="installHint">قد لا يظهر زر التثبيت إلا بعد رفع التطبيق على استضافة آمنة.</p></div>
+ <div class="panel"><h3>الخصوصية</h3><p class="tiny">الواجبات والملاحظات محفوظة محلياً على نفس الجهاز في هذه النسخة. تسجيل الدخول Google متاح، لكن مزامنة البيانات السحابية غير مفعّلة بعد.</p><button class="btn danger full" onclick="clearData()">مسح بيانات هذا الجهاز</button></div>
+ <div class="panel"><h3>حول التطبيق</h3><p class="tiny">موسوعة العراق الذكية 🇮🇶 — نسخة تجريبية متعددة الأجهزة.</p></div>
+</section>
+</div></div></main></div>
+<nav class="mobile-nav">
+ <button class="active" data-go="home" onclick="go('home')"><strong>⌂</strong>الرئيسية</button>
+ <button data-go="study" onclick="go('study')"><strong>🗺️</strong>المنهج</button>
+ <button data-go="tasks" onclick="go('tasks')"><strong>📝</strong>واجباتي</button>
+ <button data-go="notes" onclick="go('notes')"><strong>📒</strong>مذكراتي</button>
+ <button data-go="exams" onclick="go('exams')"><strong>🗓️</strong>الامتحانات</button>
+</nav>
+<div class="toast" id="toast"></div>
+<script>
+const $=id=>document.getElementById(id);
+const read=(k,d=[])=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}};
+const save=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
+let tasks=read('iraq_tasks'),notes=read('iraq_notes'),exams=read('iraq_exams'),xp=Number(localStorage.getItem('iraq_xp')||0);
+const governorates=['دهوك','نينوى','السليمانية','كركوك','أربيل','ديالى','الأنبار','بغداد','بابل','كربلاء','واسط','صلاح الدين','النجف','القادسية','ميسان','ذي قار','المثنى','البصرة'];
+function go(id){document.querySelectorAll('.screen').forEach(s=>s.classList.toggle('active',s.id===id));document.querySelectorAll('[data-go]').forEach(b=>b.classList.toggle('active',b.dataset.go===id));window.scrollTo({top:0,behavior:'smooth'});if(id==='tasks')renderTasks();if(id==='notes')renderNotes();if(id==='exams')renderExams()}
+function showToast(t){const el=$('toast');el.textContent=t;el.style.display='block';clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>el.style.display='none',2300)}
+function addTask(){const title=$('taskTitle').value.trim();if(!title){showToast('اكتب اسم الواجب أولاً');return}tasks.unshift({id:Date.now(),title,subject:$('taskSubject').value,date:$('taskDate').value,done:false});save('iraq_tasks',tasks);$('taskTitle').value='';$('taskDate').value='';renderTasks();updateStats();showToast('انضاف الواجب بنجاح')}
+function toggleTask(id){tasks=tasks.map(t=>t.id===id?{...t,done:!t.done}:t);save('iraq_tasks',tasks);if(tasks.find(t=>t.id===id)?.done){xp+=5;localStorage.setItem('iraq_xp',xp)}renderTasks();updateStats()}
+function deleteTask(id){tasks=tasks.filter(t=>t.id!==id);save('iraq_tasks',tasks);renderTasks();updateStats()}
+function renderTasks(){const open=tasks.filter(t=>!t.done).length;$('openTasks').textContent=open+' مفتوح';$('taskList').className=tasks.length?'':'tiny empty';$('taskList').innerHTML=tasks.length?tasks.map(t=>`<div class="item ${t.done?'completed':''}"><input type="checkbox" ${t.done?'checked':''} onchange="toggleTask(${t.id})"><div class="item-main"><b>${esc(t.title)}</b><small>${esc(t.subject)} ${t.date?' • '+esc(t.date):''}</small></div><button class="btn danger small" onclick="deleteTask(${t.id})">حذف</button></div>`).join():'ما عندك واجبات بعد. أضف أول واجب من الأعلى.'}
+function addNote(){const title=$('noteTitle').value.trim(),body=$('noteBody').value.trim();if(!title||!body){showToast('اكتب العنوان والملاحظة');return}notes.unshift({id:Date.now(),title,body,date:new Date().toLocaleDateString('ar-IQ')});save('iraq_notes',notes);$('noteTitle').value='';$('noteBody').value='';renderNotes();updateStats();showToast('انحفظت الملاحظة')}
+function deleteNote(id){notes=notes.filter(n=>n.id!==id);save('iraq_notes',notes);renderNotes();updateStats()}
+function renderNotes(){$('noteList').className=notes.length?'':'tiny empty';$('noteList').innerHTML=notes.length?notes.map(n=>`<div class="item"><div class="item-main"><b>${esc(n.title)}</b><small>${esc(n.date)}</small><p>${esc(n.body).replace(/\n/g,'<br>')}</p></div><button class="btn danger small" onclick="deleteNote(${n.id})">حذف</button></div>`).join():'ماكو ملاحظات محفوظة بعد.'}
+function addExam(){const subject=$('examSubject').value.trim(),date=$('examDate').value;if(!subject||!date){showToast('اكتب المادة وحدد التاريخ');return}exams.push({id:Date.now(),subject,date});exams.sort((a,b)=>a.date.localeCompare(b.date));save('iraq_exams',exams);$('examSubject').value='';$('examDate').value='';renderExams();showToast('انضاف موعد الامتحان')}
+function deleteExam(id){exams=exams.filter(e=>e.id!==id);save('iraq_exams',exams);renderExams()}
+function renderExams(){$('examList').className=exams.length?'':'tiny empty';$('examList').innerHTML=exams.length?exams.map(e=>`<div class="item"><div class="item-main"><b>${esc(e.subject)}</b><small>${esc(e.date)}</small></div><button class="btn danger small" onclick="deleteExam(${e.id})">حذف</button></div>`).join():'ما أضفت امتحانات بعد.'}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function updateStats(){const open=tasks.filter(t=>!t.done).length,total=tasks.length,done=total-open;$('xp').textContent=xp+' ⭐';$('taskCount').textContent=open;$('noteCount').textContent=notes.length;$('taskProgressText').textContent=(total?Math.round(done/total*100):0)+'%';$('taskProgress').style.width=(total?done/total*100:0)+'%'}
+function clearData(){if(!confirm('متأكد تريد تمسح كل الواجبات والملاحظات والامتحانات المحفوظة على هذا الجهاز؟'))return;['iraq_tasks','iraq_notes','iraq_exams','iraq_xp'].forEach(k=>localStorage.removeItem(k));tasks=[];notes=[];exams=[];xp=0;renderTasks();renderNotes();renderExams();updateStats();showToast('تم مسح بيانات هذا الجهاز')}
+let deferredPrompt;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;$('installHint').textContent='تطبيقك جاهز للتثبيت على هذا الجهاز.'});
+async function installApp(){if(deferredPrompt){deferredPrompt.prompt();deferredPrompt=null}else{showToast(/iphone|ipad/i.test(navigator.userAgent)?'في Safari اضغط مشاركة ثم إضافة إلى الشاشة الرئيسية':'من قائمة المتصفح اختر تثبيت التطبيق أو إضافة إلى الشاشة الرئيسية')}}
+$('cities').innerHTML=governorates.map(c=>`<div class="city">${c}</div>`).join('');
+renderTasks();renderNotes();renderExams();updateStats();
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+</script>
+
+<!-- Firebase Google Sign-In module -->
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+import {
+  getAuth, GoogleAuthProvider, signInWithRedirect,
+  getRedirectResult, onAuthStateChanged, signOut
+} from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBIgGw3cILiKLTI2Bkir3JB0E9cE3qwL58",
+  authDomain: "mosoaat-iraq.firebaseapp.com",
+  projectId: "mosoaat-iraq",
+  storageBucket: "mosoaat-iraq.firebasestorage.app",
+  messagingSenderId: "561192580157",
+  appId: "1:561192580157:web:08d512b8279920eb9da654",
+  measurementId: "G-WPZSMSGS0F"
+};
+
+const firebaseApp = initializeApp(firebaseConfig);
+const auth = getAuth(firebaseApp);
+const googleProvider = new GoogleAuthProvider();
+
+window.mosoaatAuth = {
+  signInWithGoogle: () => signInWithRedirect(auth, googleProvider),
+  signOut: () => signOut(auth)
+};
+
+getRedirectResult(auth).catch(error => {
+  console.error("Google sign-in:", error);
+  if (typeof showToast === "function") showToast("تعذّر تسجيل الدخول: " + (error.code || "خطأ"));
+});
+
+onAuthStateChanged(auth, user => {
+  const button = document.getElementById("profileBtn");
+  if (button && user) {
+    button.textContent = "👤 " + (user.displayName || "حسابي");
+    button.onclick = () => window.mosoaatAuth.signOut()
+      .then(() => showToast("تم تسجيل الخروج"))
+      .catch(() => showToast("تعذّر تسجيل الخروج"));
+    window.dispatchEvent(new CustomEvent("mosoaat-auth-changed", {
+      detail: { uid:user.uid, displayName:user.displayName||"", email:user.email||"", photoURL:user.photoURL||"" }
+    }));
+  } else if (button) {
+    button.textContent = "🔐 تسجيل الدخول Google";
+    button.onclick = () => window.mosoaatAuth.signInWithGoogle();
+    window.dispatchEvent(new CustomEvent("mosoaat-auth-changed", { detail:null }));
+  }
+});
+</script>
+</body></html>
